@@ -71,7 +71,7 @@ class SemStore(val ontDir: File) {
   private def loadOntologyFromLocalFile(manager: OWLOntologyManager, file: File): Unit = manager.loadOntologyFromOntologyDocument(new FileDocumentSource(file), loaderConfig)
 
   private def createOntologyFolderManager(): OWLOntologyManager = {
-    val manager = OWLManager.createOWLOntologyManager
+    val manager = OWLManager.createOWLOntologyManager()
     manager.clearIRIMappers()
     manager.addIRIMapper(NullIRIMapper)
     manager
